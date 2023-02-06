@@ -7,7 +7,7 @@
         body{
             background: #ddd;
         }
-        #wrapper {
+ #wrapper {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -37,41 +37,85 @@
   position: absolute;
   width: 400px;
   height: 400px;
-  border: 2px solid #262626;
+  /* border: 2px solid #262626; */
 }
 
 #box-front {
   transform: translateX(-200px) translateY(-200px) translateZ(200px);
-  background: rgba(255, 16, 107, 0.5);
+  background: rgba(245, 245, 245, 0.925);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 5px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 #box-back {
   transform: translateX(-200px) translateY(-200px) translateZ(-200px);
-  background: rgba(1, 251, 236, 0.5);
+  /* background: rgba(1, 251, 236, 0.5); */
+  background: rgba(245, 245, 245, 0.925);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 5px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 #box-right {
   transform: translateY(-200px) rotateY(90deg);
-  background: rgba(4, 255, 116, 0.5);
+  /* background: rgba(4, 255, 116, 0.5); */
+  background: rgba(245, 245, 245, 0.925);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 5px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 #box-left {
   transform: translateY(-200px) translateX(-400px) rotateY(90deg);
-  background: rgba(216, 255, 0, 0.5);
+  /* background: rgba(216, 255, 0, 0.5); */
+  background: rgba(245, 245, 245, 0.925);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 5px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 #box-top {
   transform: translateX(-200px) translateY(-400px) rotateX(90deg);
-  background: rgba(0, 6, 246, 0.5);
+  /* background: rgba(0, 6, 246, 0.5); */
+  background: rgba(245, 245, 245, 0.925);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 5px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 #box-bottom {
   transform: translateX(-200px) rotateX(90deg);
-  background: rgba(255, 30, 0, 0.5);
+  /* background: rgba(255, 30, 0, 0.5); */
+  background: rgba(245, 245, 245, 0.925);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 5px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 .box-area {
   transform: rotateX(90deg) rotateY(90deg);
+}
+#div{
+    height: 50%;
+    width: 50%;
+    margin: auto;
+}
+img{
+    height: 100%;
+    width: 100%;
 }
 
     </style>
@@ -79,12 +123,30 @@
 <body>
     <div id="wrapper">
   <div class="box-area">
-    <div id="box-front" class="box"></div>
-    <div id="box-right" class="box"></div>
-    <div id="box-back" class="box"></div>
-    <div id="box-left" class="box"></div>
-    <div id="box-top" class="box"></div>
-    <div id="box-bottom" class="box"></div>
+    <div id="box-front" class="box">
+        <div id="div">
+              <img src="https://img.freepik.com/free-icon/html-5_318-566077.jpg" alt="">
+        </div>
+    </div>
+    <div id="box-right" class="box">
+        <div id="div">
+            <img src="https://img.freepik.com/free-icon/css_318-890298.jpg" alt="">
+        </div>
+    </div>
+    <div id="box-back" class="box">
+        <div id="div">
+            <img src="https://e7.pngegg.com/pngimages/602/440/png-clipart-javascript-open-logo-number-js-angle-text-thumbnail.png" alt="">
+        </div>
+    </div>
+    <div id="box-left" class="box">
+        <div id="div">
+            <img src="https://w7.pngwing.com/pngs/452/495/png-transparent-react-javascript-angularjs-ionic-github-text-logo-symmetry-thumbnail.png" alt="">
+        </div>
+    </div>
+    <div id="box-top" class="box">
+    </div>
+    <div id="box-bottom" class="box">
+    </div>
   </div>
 </div>
 </body>
