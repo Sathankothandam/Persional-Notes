@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    .priceDiv {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      width: fit-content;
+    }
+    .img {
+      height: 250px;
+    }
+    #container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 96%;
+      margin: auto;
+    }
+    .card {
+      box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+        rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+        rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+      padding: 20px;
+    }
+    .navbar {
+      background-color: black;
+      color: blue;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0px 10px 0px;
+    }
+    .navbar > a {
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+  <body>
+    <div class="navbar">
+      <a href="index.html">AdPage</a>
+      <a href="car.html">Car</a>
+      <a href="whislist.html">WhistList</a>
+    </div>
+    <div id="container"></div>
+  </body>
+  <script>
+    async function getData() {
+      let res = await fetch("https://serverjh.onrender.com/wishlisted_cars");
+      let data = await res.json();
+      displayData(data);
+    }
+    function displayData(data) {
+      console.log(data);
+      let container = document.querySelector("#container");
+      container.innerHTML = null;
+      data.map((item) => {
+        let card = document.createElement("div");
+        card.setAttribute("class", "card");
+        let img = document.createElement("img");
+        (img.src =
+          "https://images.unsplash.com/photo-1581289608453-118d7d71e5cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHVzZWQlMjBjYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+          img.setAttribute("class", "img");
+        let name = document.createElement("h3");
+        name.innerText = item.year + " " + item.brand;
+        let type = document.createElement("p");
+        type.innerText = "LXI" + item.type;
+        let btn1 = document.createElement("button");
+        btn1.innerText = item.Km;
+        let btn2 = document.createElement("button");
+        btn2.innerText = "1st Owner";
+        let btn3 = document.createElement("button");
+        btn3.innerText = "petrol";
+        let emi = document.createElement("h3");
+        emi.innerHTML = "Rs 11344/month";
+        let price = document.createElement("p");
+        price.innerText = "Rs" + " " + item.price;
+        let priceDiv = document.createElement("div");
+        priceDiv.setAttribute("class", "priceDiv");
+        priceDiv.append(emi, price);
+        let p = document.createElement("p");
+        p.innerText = "Zero Down Payment";
+
+        card.append(img, name, type, btn1, btn2, btn3, priceDiv, p);
+        container.append(card);
+      });
+    }
+    getData();
+  </script>
+</html>
