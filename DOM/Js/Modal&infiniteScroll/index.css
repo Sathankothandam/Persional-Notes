@@ -1,0 +1,33 @@
+#container{
+    width:90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap:20px;
+    height: 100vh;
+    
+}
+.box{
+    padding:15px 10px;
+    text-align: left;
+    cursor: pointer;
+}
+.heading{
+    text-align: center;
+}
+#modal{
+    width:30%;
+    margin: auto;
+    z-index: 100;
+    position: relative;
+    opacity: 1;
+    background-color:white;
+    padding: 10px;
+    color: black;
+    margin-top: -40%;
+    box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
+    display: none;
+}
+
+
